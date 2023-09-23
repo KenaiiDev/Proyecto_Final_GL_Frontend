@@ -1,24 +1,53 @@
 import { React } from 'react'
 import Image from 'next/image'
-import Logo from '@/assets/png_white_meowvies.png'
-import Search from '@/assets/search-alt-2-svgrepo-com.svg'
-import User from '@/assets/user-svgrepo-com.svg'
+import Link from 'next/link'
 
 function NavigationBar() {
   return (
-    <nav className='bg-black p-1 flex justify-between items-center'>
-      <div className='flex space-x-'>
-        <Image src={Logo} alt={'Meowvies'} width={55} height={55} />
-      </div>
-      <div className='flex'>
-        <Image
-          className='fill-white'
-          src={Search}
-          alt={'Search'}
-          width={45}
-          height={45}
-        />
-        <Image src={User} alt={'username'} width={45} height={45} />
+    <nav className='h-10'>
+      <div className='navbar bg-black'>
+        <div className='flex-1'>
+          <Link href={'/'}>
+            <Image
+              src={'/assets/meowvies_white.png'}
+              alt='Meowvies'
+              width={25}
+              height={25}
+            />
+          </Link>
+        </div>
+        <div>
+          <Image
+            src={'/assets/search.svg'}
+            alt='Search'
+            width={25}
+            height={25}
+          />
+        </div>
+        <div className='dropdown dropdown-end'>
+          <label tabIndex={0} className='btn btn-ghost btn-circle'>
+            <div className='w-10 rounded-full'>
+              <Image src='/assets/user.svg' alt='User' width={25} height={25} />
+            </div>
+          </label>
+          <ul
+            tabIndex={0}
+            className='mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52'
+          >
+            <li>
+              <a className='justify-between'>
+                Profile
+                <span className='badge'>New</span>
+              </a>
+            </li>
+            <li>
+              <a>Settings</a>
+            </li>
+            <li>
+              <a>Logout</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   )
