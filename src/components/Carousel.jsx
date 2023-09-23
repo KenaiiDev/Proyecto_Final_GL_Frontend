@@ -10,16 +10,17 @@ function Carousel() {
             src='/assets/gato.jpg'
             alt='Cat 1'
             width={100}
-            height={100}
+            height={80}
             className='w-full'
           />
         </div>
         <div id='item2' className='carousel-item w-full'>
+          <div className='item'></div>
           <Image
             src='/assets/gato2.jpg'
             alt='Cat 1'
             width={100}
-            height={100}
+            height={80}
             className='w-full'
           />
         </div>
@@ -28,7 +29,7 @@ function Carousel() {
             src='/assets/gato3.jpg'
             alt='Cat 1'
             width={100}
-            height={100}
+            height={80}
             className='w-full'
           />
         </div>
