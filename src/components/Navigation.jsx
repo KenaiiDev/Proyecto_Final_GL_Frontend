@@ -16,7 +16,14 @@ function NavigationBar() {
         </Link>
       </div>
       <div>
-        <Image src={'/assets/search.svg'} alt='Search' width={45} height={45} />
+        <Link href={'/search'}>
+          <Image
+            src={'/assets/search.svg'}
+            alt='Search'
+            width={45}
+            height={45}
+          />
+        </Link>
       </div>
       <div className='dropdown dropdown-end'>
         <label tabIndex={0} className='btn btn-ghost btn-circle'>
