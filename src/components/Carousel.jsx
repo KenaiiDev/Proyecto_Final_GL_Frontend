@@ -4,7 +4,7 @@ import Image from 'next/image'
 function Carousel() {
   return (
     <>
-      <div className='carousel w-full'>
+      <div className='carousel flex max-h-80'>
         <div id='item1' className='carousel-item w-full'>
           <Image
             src='/assets/gato.jpg'
