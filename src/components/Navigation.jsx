@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 function NavigationBar() {
   return (
-    <nav className=' h-10 navbar bg-black flex-1'>
+    <nav className=' h-10 navbar bg-black flex-1  z-50 fixed'>
       <div className='flex-1'>
         <Link href={'/'}>
           <Image
@@ -36,10 +36,10 @@ function NavigationBar() {
           className='mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52'
         >
           <li>
-            <a className='justify-between'>
+            <Link href={'/user'} className='justify-between'>
               Profile
               <span className='badge'>New</span>
-            </a>
+            </Link>
           </li>
           <li>
             <a>Settings</a>

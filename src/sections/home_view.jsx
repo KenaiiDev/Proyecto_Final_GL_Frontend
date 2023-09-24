@@ -5,6 +5,7 @@ import Card from '@/components/Cards'
 function HomeView() {
   return (
     <>
+      <div className='h-10'></div>
       <section className='flex-3 min-w-full '>
         <Carousel />
       </section>
@@ -12,7 +13,6 @@ function HomeView() {
         TOP 20{' '}
       </h1>
       <section className='flex-1 justify-center '>
-        <Card />
         <Card />
         <Card />
         <Card />
