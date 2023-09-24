@@ -4,13 +4,13 @@ import Image from 'next/image'
 function Carousel() {
   return (
     <>
-      <div className='carousel flex max-h-80 max-w-7xl justify-self-center'>
+      <div className='carousel flex max-h-30 max-w-6xl justify-self-center'>
         <div id='item1' className='carousel-item w-full'>
           <Image
             src='/assets/gato.jpg'
             alt='Cat 1'
             width={100}
-            height={80}
+            height={50}
             className='w-full'
           />
         </div>

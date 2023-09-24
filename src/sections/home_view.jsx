@@ -12,7 +12,10 @@ function HomeView() {
       <h1 className='font-sans text-5xl font-bold my-3 mx-2 text-purple-400 text-center'>
         TOP 20{' '}
       </h1>
-      <section className='flex-1 justify-center '>
+      <section className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center max-w-full'>
+        <Card />
+        <Card />
+        <Card />
         <Card />
         <Card />
         <Card />
