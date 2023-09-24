@@ -1,4 +1,3 @@
-import Footer from '@/components/Footer'
 import './globals.css'
 import NavigationBar from '@/components/Navigation.jsx'
 import Footer from '@/components/Footer'
