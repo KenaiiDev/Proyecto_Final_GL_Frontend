@@ -1,0 +1,21 @@
+<button className="bg-red-500 sm:bg-sky-500"> CLICK </button>
+<button className="bg-red-500 md:bg-sky-500"> CLICK </button>
+<button className="bg-red-500 lg:bg-sky-800"> CLICK </button>
+<button className="bg-red-500 x1 :bg-sky-500"> CLICK </button
+<button className="bg-red-500 2x1 :bg-sky-500"> CLICK </button
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  theme: {
+    screens: {
+      'tablet': '640px',
+      // => @media (min-width: 640px) { ... }
+
+      'laptop': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'desktop': '1280px',
+      // => @media (min-width: 1280px) { ... }
+    },
+  }
+}
