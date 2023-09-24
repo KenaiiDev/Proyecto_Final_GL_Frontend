@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer'
 import './globals.css'
 import NavigationBar from '@/components/Navigation.jsx'
 
@@ -12,6 +13,7 @@ export default function RootLayout({ children }) {
       <body className='bg-midnight-purple'>
         <NavigationBar />
         {children}
+        <Footer />
       </body>
     </html>
   )
