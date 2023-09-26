@@ -1,35 +1,35 @@
-import React from 'react'
-import Image from 'next/image'
+import React from 'react';
+import Image from 'next/image';
 
 function Carousel() {
   return (
-    <>
-      <div className='carousel flex max-h-30 max-w-6xl justify-self-center'>
-        <div id='item1' className='carousel-item w-full'>
+    <div className='flex flex-col items-center justify-center h-screen'>
+      <div className='carousel max-h-30 max-w-8xl w-full'>
+        <div id='item1' className='carousel-item w-full relative'>
           <Image
             src='/assets/gato.jpg'
             alt='Cat 1'
-            width={100}
-            height={50}
+            width={2000}
+            height={2000}
             className='w-full'
+
           />
         </div>
-        <div id='item2' className='carousel-item w-full'>
-          <div className='item'></div>
+        <div id='item2' className='carousel-item w-full relative'>
           <Image
             src='/assets/gato2.jpg'
             alt='Cat 1'
-            width={100}
-            height={80}
+            width={2000}
+            height={2000}
             className='w-full'
           />
         </div>
-        <div id='item3' className='carousel-item w-full'>
+        <div id='item3' className='carousel-item w-full relative'>
           <Image
             src='/assets/gato3.jpg'
             alt='Cat 1'
-            width={100}
-            height={80}
+            width={2000}
+            height={2000}
             className='w-full'
           />
         </div>
@@ -45,8 +45,8 @@ function Carousel() {
           3
         </a>
       </div>
-    </>
-  )
+    </div>
+  );
 }
 
-export default Carousel
+export default Carousel;

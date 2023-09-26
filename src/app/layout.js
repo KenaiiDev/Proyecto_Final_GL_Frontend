@@ -10,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className='bg-midnight-purple'>
+      <body className='bg-gradient-to-tl from-purple-800 via-purple-800 to-purple-950'>
         <NavigationBar />
         {children}
         <Footer />
