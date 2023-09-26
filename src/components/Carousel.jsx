@@ -1,49 +1,36 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
-function Carousel() {
+function Carousel({ data }) {
   return (
-    <div className='flex flex-col items-center justify-center h-screen'>
-      <div className='carousel max-h-30 max-w-8xl w-full'>
-        <div id='item1' className='carousel-item w-full relative'>
-          <Image
-            src='/assets/gato.jpg'
-            alt='Cat 1'
-            width={2000}
-            height={2000}
-            className='w-full'
-
-          />
-        </div>
-        <div id='item2' className='carousel-item w-full relative'>
-          <Image
-            src='/assets/gato2.jpg'
-            alt='Cat 1'
-            width={2000}
-            height={2000}
-            className='w-full'
-          />
-        </div>
-        <div id='item3' className='carousel-item w-full relative'>
-          <Image
-            src='/assets/gato3.jpg'
-            alt='Cat 1'
-            width={2000}
-            height={2000}
-            className='w-full'
-          />
-        </div>
+    <div className="flex flex-col items-center justify-center h-full">
+      <div className="carousel max-w-8xl w-full">
+        {data.map((movie) => {
+          return (
+            <div key={movie.id} id={movie.id} className="carousel-item w-full relative">
+              <Image
+                src={movie.backdrop_path}
+                alt={movie.title}
+                width={1000}
+                height={560}
+                className="w-full"
+              />
+            </div>
+          );
+        })}
       </div>
-      <div className='flex justify-center w-full py-2 gap-2'>
-        <a href='#item1' className='btn btn-xs'>
-          1
-        </a>
-        <a href='#item2' className='btn btn-xs'>
-          2
-        </a>
-        <a href='#item3' className='btn btn-xs'>
-          3
-        </a>
+      <div className="flex justify-center w-full py-2 gap-2">
+        {data.map((movie) => {
+          return (
+            <a
+              href={`#${movie.id}`}
+              key={`#${movie.id}`}
+              className="btn btn-xs"
+            >
+              {data.indexOf(movie) + 1}
+            </a>
+          );
+        })}
       </div>
     </div>
   );

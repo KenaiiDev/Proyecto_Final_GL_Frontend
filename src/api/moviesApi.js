@@ -1,11 +1,14 @@
 const getMovies = async (page = 0) => {
+  console.log({ page });
 
-  const response = await fetch(`${process.env.API_URL}/movies${page > 0 ? `/${page}` : ""}`);
+  const response = await fetch(
+    `${process.env.API_URL}/movies${page > 0 ? `/${page}` : ""}`
+  );
   const data = await response.json();
 
   if (data.success) {
     const moviesWithImages = data.data.results.map((movie) => {
-      const backdropUrl = `${process.env.TMDB_IMAGE_URL}/w500${movie.backdrop_path}`;
+      const backdropUrl = `${process.env.TMDB_IMAGE_URL}/original${movie.backdrop_path}`;
       const posterUrl = `${process.env.TMDB_IMAGE_URL}/w500${movie.poster_path}`;
       return { ...movie, backdrop_path: backdropUrl, poster_path: posterUrl };
     });
@@ -20,10 +23,11 @@ const getMovieById = async (id) => {
   const data = await response.json();
 
   if (data.success) {
-    const backdropUrl = `${process.env.TMDB_IMAGE_URL}/w500${data.backdrop_path}`;
-    const posterUrl = `${process.env.TMDB_IMAGE_URL}/w500${data.poster_path}`;
-    data.backdrop_path = backdropUrl;
-    data.poster_path = posterUrl;
+    console.log(process.env.TMDB_IMAGE_URL);
+    const backdropUrl = `${process.env.TMDB_IMAGE_URL}/original${data.data.backdrop_path}`;
+    const posterUrl = `${process.env.TMDB_IMAGE_URL}/original${data.data.poster_path}`;
+    data.data.backdrop_path = backdropUrl;
+    data.data.poster_path = posterUrl;
   }
   return data;
 };
@@ -34,7 +38,8 @@ const getGenres = async () => {
   return data;
 };
 
-const searchMovie = async (param) => {
+const searchMovie = async (param = "") => {
+  console.log({ searchParam: param });
   const response = await fetch(
     `${process.env.API_URL}/movies/search?title="${param}"`
   );
