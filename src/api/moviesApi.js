@@ -1,5 +1,6 @@
-const getMovies = async () => {
-  const response = await fetch(`${process.env.API_URL}/movies`);
+const getMovies = async (page = 0) => {
+
+  const response = await fetch(`${process.env.API_URL}/movies${page > 0 ? `/${page}` : ""}`);
   const data = await response.json();
 
   if (data.success) {
