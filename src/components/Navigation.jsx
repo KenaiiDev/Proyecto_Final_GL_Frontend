@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 function NavigationBar() {
   return (
-    <nav className=' h-10 navbar bg-black flex-1  z-50 fixed'>
+    <nav className='h-10 navbar flex-1 z-50 fixed bg-gradient-to-b from-black via-black to-transparent'>
       <div className='flex-1'>
         <Link href={'/'}>
           <Image
